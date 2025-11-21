@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-export const Summary = () => {
+export function Summary() {
     const { finalAverage, status, neededMessage } = useGradeCalculations();
     const { config, updateConfig } = useGradeStore();
 

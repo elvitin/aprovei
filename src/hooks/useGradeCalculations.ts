@@ -1,6 +1,6 @@
 import { useGradeStore } from "@/store/useGradeStore";
 
-export const useGradeCalculations = () => {
+export function useGradeCalculations() {
     const { bimesters, config, examGrade } = useGradeStore();
 
     const bimesterStats = bimesters.map((b) => {

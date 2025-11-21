@@ -6,7 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
 
-export const Exam = () => {
+export function Exam() {
     const { status, examResult } = useGradeCalculations();
     const { examGrade, setExamGrade } = useGradeStore();
 

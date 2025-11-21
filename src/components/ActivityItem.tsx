@@ -9,7 +9,7 @@ interface ActivityItemProps {
     bimesterId: 1 | 2;
 }
 
-export const ActivityItem = ({ activity, bimesterId }: ActivityItemProps) => {
+export function ActivityItem({ activity, bimesterId }: ActivityItemProps) {
     const { updateActivity, removeActivity } = useGradeStore();
 
     const handleWeightChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,6 +49,11 @@ export const ActivityItem = ({ activity, bimesterId }: ActivityItemProps) => {
                     min={0}
                     max={100}
                 />
+            </div>
+            <div className="w-16 flex items-center justify-center pb-2">
+                <span className="text-sm font-medium text-muted-foreground">
+                    {(activity.grade * activity.weight).toFixed(2)}
+                </span>
             </div>
             <Button
                 variant="ghost"

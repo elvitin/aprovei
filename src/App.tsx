@@ -2,6 +2,7 @@ import { useGradeStore } from "@/store/useGradeStore";
 import { Bimester } from "@/components/Bimester";
 import { Summary } from "@/components/Summary";
 import { Exam } from "@/components/Exam";
+import githubIcon from "@/assets/github.svg";
 
 function App() {
   const { bimesters } = useGradeStore();
@@ -31,8 +32,17 @@ function App() {
           </div>
         </div>
 
-        <footer className="text-center text-xs text-muted-foreground pt-8">
+        <footer className="text-center text-xs text-muted-foreground pt-8 flex flex-col items-center gap-2">
           <p>Desenvolvido com React, Vite, Tailwind e Shadcn.</p>
+          <a
+            href="https://github.com/elvitin/aprovei"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 hover:text-foreground transition-colors"
+          >
+            <img src={githubIcon} alt="GitHub" className="h-4 w-4" />
+            GitHub
+          </a>
         </footer>
       </div>
     </div>

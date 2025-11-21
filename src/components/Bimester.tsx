@@ -10,7 +10,7 @@ interface BimesterProps {
     bimester: BimesterType;
 }
 
-export const Bimester = ({ bimester }: BimesterProps) => {
+export function Bimester({ bimester }: BimesterProps) {
     const { addActivity } = useGradeStore();
     const { bimesterStats } = useGradeCalculations();
 
