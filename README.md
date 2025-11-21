@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Calculadora de Notas (Aprovei)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Uma aplicação web moderna para cálculo e gerenciamento de notas escolares, desenvolvida com React, TypeScript e Vite.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Gerenciamento de Bimestres**: Controle de notas e pesos para dois bimestres.
+- **Cálculo Automático**: Médias e status (Aprovado/Exame/Reprovado) calculados em tempo real.
+- **Conclusão de Bimestre**: Opção para "fechar" um bimestre, impedindo edições acidentais.
+- **Análise Detalhada**:
+  - Visualização de peso restante.
+  - Cálculo de nota potencial máxima.
+  - Indicador de possibilidade de aprovação sem exame.
+  - Mensagens proativas sobre quanto falta para passar.
+- **Modo Exame**: Interface dedicada para cálculo de nota de exame final quando necessário.
+- **Configuração Flexível**: Defina suas próprias médias de aprovação e exame.
+- **Interface Moderna**: Design responsivo e polido com Shadcn UI e Tailwind CSS.
+- **Dark Mode**: Suporte automático ao tema do sistema.
 
-## React Compiler
+## 🛠️ Tecnologias
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/) (v4)
+- [Shadcn UI](https://ui.shadcn.com/)
+- [Zustand](https://zustand-demo.pmnd.rs/) (Gerenciamento de Estado)
+- [Biome](https://biomejs.dev/) (Linting e Formatação)
 
-## Expanding the ESLint configuration
+## 📦 Instalação e Uso
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/seu-usuario/aprovei.git
+   cd aprovei
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. **Instale as dependências**
+   ```bash
+   npm install
+   ```
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+3. **Inicie o servidor de desenvolvimento**
+   ```bash
+   npm run dev
+   ```
+   Acesse `http://localhost:5173` no seu navegador.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+4. **Build para produção**
+   ```bash
+   npm run build
+   ```
+   Os arquivos estáticos serão gerados na pasta `dist`.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🧹 Linting e Formatação
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Este projeto utiliza o **Biome** para manter a qualidade do código.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- **Formatar código**:
+  ```bash
+  npm run fmt
+  ```
+
+- **Verificar lint**:
+  ```bash
+  npx @biomejs/biome lint .
+  ```
+
+## 📂 Estrutura do Projeto
+
+- `src/components`: Componentes React reutilizáveis (Bimester, Exam, Summary, etc.).
+- `src/store`: Gerenciamento de estado global com Zustand (`useGradeStore`).
+- `src/hooks`: Lógica de cálculo de notas (`useGradeCalculations`).
+- `src/lib`: Utilitários (Shadcn/Tailwind).
+
+---
+
+<div align="center">
+  <p>Desenvolvido com ❤️ usando as melhores práticas de desenvolvimento web moderno.</p>
+  <p>Desenvolvido com</p>
+  <a href="https://antigravity.google/">
+    <img src="src/assets/antigravity.png" alt="Antigravity" width="150">
+  </a>
+</div>

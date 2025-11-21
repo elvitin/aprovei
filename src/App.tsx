@@ -33,6 +33,13 @@ function App() {
         <footer className='text-center text-xs text-muted-foreground pt-8 flex flex-col items-center gap-2'>
           <p>Desenvolvido com React, Vite, Tailwind e Shadcn.</p>
           <a
+            href='https://antigravity.google/'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='hover:text-foreground transition-colors'>
+            Desenvolvido com Antigravity
+          </a>
+          <a
             href='https://github.com/elvitin/aprovei'
             target='_blank'
             rel='noopener noreferrer'
